@@ -1,0 +1,35 @@
+﻿@model IEnumerable<NovaYapi_Menü.Models.Content>
+
+
+
+
+
+<!--/starters-->
+<!--/soups-->
+<!--/desserts-->
+
+
+<div class="categ-box">
+    <div class="categ-name main-courses">
+
+      
+
+    </div>
+    <div class="menu-holder menu-holder-v2 main-courses">
+        @foreach (var item in Model)
+        {
+            <div class="menu-post-v2 cols4" >
+                <a href="~/Detail/Index/@item.CategoryId/#@item.Title">
+                    <div class="menu-post-img-v2"><a href="@item.ImgUrl" class="lightbox" title="@item.Details"><img src="@item.ImgUrl" class="img-fluid" alt="" width="400" height="400"></a></div>
+                    <a href="~/Detail/Index/@item.CategoryId/#@item.Title"><h2 class="menu-title-v2">@item.Title</h2></a>
+                    <div class="menu-text">@item.Category.Name</div>
+                    <div class="menu-price-v2">@Html.DisplayFor(modelItem => item.Price)₺</div>
+                </a>
+               
+            </div>
+
+        }
+    </div>
+    <a  class="view-more margin-t36" href="~/Home/Index/"><img src="~/Uploads/ok.png" style="width:30px;" /></a>
+</div>
+

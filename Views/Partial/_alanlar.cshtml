@@ -1,0 +1,35 @@
+﻿@model IEnumerable<NovaYapi_Menü.Models.Category>
+
+
+
+
+
+<section id="home-content-1" class="home-widget">
+    <div class="container">
+       
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="home-featured-item">
+                        <div class="home-featured-img"> <img src="@item.CategoryImgUrl"  style="width:100%;height:100%" /> </div>
+                        <a href="~/Category/Index/@item.Id">
+                            <div class="grid-overlay"></div>
+                            <div class="featured-item-content">
+                                <h5 style="margin-top:2%;">@item.Name</h5>
+                                
+                            </div>
+                            <!--featured-item-content-->
+                        </a>
+                    </div>
+                    <!--home-featured-item-->
+                </div>
+                <!--.col-md-4-->
+            }
+
+        </div>
+        <!--.row-->
+    </div>
+    <!--.container-->
+</section>
+<!-- /SECTION 1 -->

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<NovaYapi_Menü.Models.Sirket>
+
+
+<section class="topSingleBkg topPageBkg">
+    <div class="item-content-bkg">
+        @foreach (var item in Model)
+        {
+            <div class="item-img" style="height: 70%; background-image: url('@item.SirketLogo');" ></div>
+            <div class="inner-desc">
+                <h1 class="post-title single-post-title">@*@item.SirketAdi*@</h1>
+                <span class="post-subtitle"></span>
+            </div>
+        }
+
+    </div>
+</section>

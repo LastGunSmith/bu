@@ -1,0 +1,52 @@
+﻿@model IEnumerable<NovaYapi_Menü.Models.Content>
+
+
+
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="~/content/silider/css/swiper-bundle.min.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="~/content/silider/css/style.css">
+
+
+<div class="slide-container swiper">
+    <div class="slide-content">
+        <div class="card-wrapper swiper-wrapper">
+            @foreach (var item in Model)
+            {
+                <div class="card swiper-slide">
+                    <div class="image-content">
+                        <span class="overlay"></span>
+
+                        <div class="card-image">
+                            <img src="@item.ImgUrl" alt="" class="card-img">
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="name"><a asp-action="@item.Title">@item.Title</a></h2>
+                       
+                        <p class="description">@item.Details</p>
+
+                        
+                        <span class="menu-price-v2">@Html.DisplayFor(modelItem => item.Price)₺ </span>
+                        
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="swiper-button-next swiper-navBtn"></div>
+    <div class="swiper-button-prev swiper-navBtn"></div>
+
+</div>
+<a class="view-more margin-t36" href="~/Home/Index/"><img src="~/Uploads/ok.png" style="width:30px;" /></a>
+
+<script src="~/content/silider/js/swiper-bundle.min.js"></script>
+
+<!-- JavaScript -->
+<script src="~/content/silider/js/script.js"></script>
+
+
