@@ -1,0 +1,49 @@
+﻿@model NovaYapi_Menü.Models.Sirket
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Sirket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SirketAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SirketAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SirketLogo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SirketLogo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SirketSiteIcon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SirketSiteIcon)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
